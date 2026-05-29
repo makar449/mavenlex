@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: mavenlex-live
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    rootDir: .
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DISABLE_LIVE_AI
+        value: "false"
+      - key: DATABASE_PROVIDER
+        value: json
